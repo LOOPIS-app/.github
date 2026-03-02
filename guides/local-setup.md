@@ -10,7 +10,7 @@ Step-by-step instructions for setting up LOOPIS.app locally.
 1. Download [loopis-config.zip](https://github.com/LOOPIS-app/loopis-config)
 2. Open the **WP Admin** area of your Local WP installation.
 3. Go to **Plugins** and install + activate **LOOPIS Config**.
-4. In the sidebar, open **LOOPIS Config** and start the LOOPIS configuration.
+4. In the sidebar, open **LOOPIS Config** and run the configuration.
 
 ## 3⃣ Set up your IDE workspace
 1. Start [Visual Studio Code](https://code.visualstudio.com/) (or your preferred IDE).
@@ -25,3 +25,6 @@ Step-by-step instructions for setting up LOOPIS.app locally.
 | `loopis-content` | `...app/public/wp-content/plugins/` |
 | `loopis-mu-plugins` | `...app/public/wp-content/mu-plugins/` |
 | `loopis-theme` | `...app/public/wp-content/themes/` |
+
+## ✅ Done!
+Changes made in your IDE will now be immediately reflected on the url provided by Local WP.
