@@ -21,12 +21,12 @@ Step-by-step instructions for setting up LOOPIS.app locally.
 
 | Folder name | Folder location |
 |:---|:---|
+| `loopis-theme` | `...app/public/wp-content/themes/` |
 | `loopis-config` | `...app/public/wp-content/plugins/` |
 | `loopis-develooper` | `...app/public/wp-content/plugins/` |
 | `loopis-admin` | `...app/public/wp-content/plugins/` |
 | `loopis-content` | `...app/public/wp-content/plugins/` |
-| `loopis-mu-plugins` | `...app/public/wp-content/mu-plugins/` |
-| `loopis-theme` | `...app/public/wp-content/themes/` |
+| `loopis-mu-plugins` | `...app/public/wp-content/` |
 
 ## ✅ Done!
 Changes made in your IDE will now be immediately reflected on the URL provided by Local WP.
