@@ -1,4 +1,4 @@
-# LOOPIS Development Guide
+# 🧑‍💻 Development guide for LOOPIS.app
 
 This guide is designed for developers who are new to PHP and WordPress. It provides an overview of the LOOPIS project structure, essential WordPress concepts, and debugging setup to help you get started quickly.
 
@@ -11,29 +11,7 @@ This guide is designed for developers who are new to PHP and WordPress. It provi
 
 ## Prerequisites
 
-1. Follow the [local setup guide](https://github.com/LOOPIS-app/.github/blob/main/guides/local-setup.md) to install and run LOOPIS locally.
-2. **Important Note**: In a WordPress Multisite installation, the Plugins menu in the Dashboard does not have an "Add Plugin" submenu. To add new plugins, navigate to **My Sites > Network Admin > Plugins** instead.
-
-### Development Workflow: Using Symlinks
-
-Instead of downloading the plugin/theme as a ZIP file and uploading it through the Dashboard (as described in the local setup guide), you can use symlinks for a more efficient development workflow:
-
-```bash
-# Navigate to your LocalWP plugins directory
-cd ${HOME}/Local Sites/loopis/app/public/wp-content/plugins/
-
-# Remove the uploaded plugin folder and create a symlink to your local Git repository
-rm -rf loopis-config
-ln -s /path/to/your/loopis-config-repo loopis-config
-```
-
-**Benefits:**
-- Changes in your local Git repository are immediately reflected in WordPress
-- No need to re-upload after each code change
-- Easier debugging and testing
-
-
-After creating the symlink, activate the plugin through the WordPress Dashboard as usual.
+Follow the guide [Local setup of LOOPIS.app](https://github.com/LOOPIS-app/.github/blob/main/guides/local-setup.md) to install and run LOOPIS locally.
 
 ## Repository Overview
 
