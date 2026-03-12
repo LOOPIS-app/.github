@@ -4,19 +4,21 @@
 
 ## ♻ Concept
 
-We make circulation of stuff in a neighbourhood as easy, fun and cheap as possible. [LOOPIS.app](https://loopis.app) is a web application combined with a physical locker for exchange of stuff, which creates a hassle-free experience for our members. 
+We make the circulation of stuff in a neighbourhood as easy, fun, and cheap as possible. [LOOPIS.app](https://loopis.app) is a web application combined with a physical locker for exchanging items, creating a hassle-free experience for our members.
 
 ## 💾 Tech stack
 
-We use WordPress Multisite for running our web application with local instances for every locker in use. Functionality is heavily customized by developing our own modular [components](https://github.com/orgs/LOOPIS-app/repositories) (plugins + theme). Programming languages used are: PHP, HTML, CSS and JavaScript. 
+We use WordPress Multisite to run our web application, with separate sites for every locker in use. WordPress functionality is heavily customized by developing our own [components](https://github.com/orgs/LOOPIS-app/repositories) (plugins + theme). Programming languages used are PHP, HTML, CSS, and JavaScript.
 
 ## 👥 Team
 
-We aim to infuse a sense of community and collaboration in the coding as well as the usage of our concept. [Johan](https://github.com/joxyzan) and [Hubert](https://github.com/HubertHilborn) are currently employed by LOOPIS HQ to increase development and enable expansion to new areas. Together with the volunteering developers we are The Develoopers. 💚
+We aim to infuse a sense of community and collaboration in both the development and use of our concept. [Johan](https://github.com/joxyzan) and [Hubert](https://github.com/HubertHilborn) are currently employed by LOOPIS HQ to advance development and enable expansion to new areas. Together with our volunteer developers, we are The Develoopers. 💚
 
 ## 🧩 Contribution
 
-Join our [Discord server](https://discord.com/channels/1408724249308430378/1408724250323587116) and introduce yourself. There we can discuss what you would like to accomplish. You can also check the list of [issues & feature requests](https://github.com/search?q=org%3ALOOPIS-app+is%3Aissue+is%3Aopen&type=issues). To suggest code changes; create a new branch with your improvements for the component concerned, and make a pull request to 'staging' for review.
+- Join our [Discord server](https://discord.com/channels/1408724249308430378/1408724250323587116) and introduce yourself to discuss what you would like to accomplish.
+- Check the list of [issues & feature requests](https://github.com/search?q=org%3ALOOPIS-app+is%3Aissue+is%3Aopen&type=issues).
+- To suggest code changes, create a new branch for the relevant component and open a pull request to `staging` for review.
 
 ## 📚 Resources
 
