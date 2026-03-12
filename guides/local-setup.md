@@ -31,7 +31,9 @@ Step-by-step instructions for setting up LOOPIS.app locally.
 
 [^1]: Command to create symbolic links:
 `ln -s /path/to/original /path/to/symlink`
-
+   
 ## Done! ✅ 
 
 Changes made in your IDE will now be immediately reflected on the URL provided by Local WP.
+
+PS. Use plugin "LOOPIS Develooper" to insert sample posts and users.
