@@ -26,8 +26,8 @@ Step-by-step instructions for setting up LOOPIS.app locally.
 | Folder name | Symbolic link location |
 |---|---|
 | loopis-theme | `...app/public/wp-content/themes/` |
-| loopis-<plugin-name> | `...app/public/wp-content/plugins/` |
-| loopis-mu-plugins | `...app/public/wp-content/mu-plugins/` |
+| loopis-"plugin-name" | `...app/public/wp-content/plugins/` |
+| mu-plugins | `...app/public/wp-content/` |
 
 [^1]: Command to create symbolic links:
 `ln -s /path/to/original /path/to/symlink`
