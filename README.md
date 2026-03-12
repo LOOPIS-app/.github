@@ -1,6 +1,6 @@
 # 📚 Resources
 
-**Resources for understanding and developing LOOPIS.app**
+**Introduction and gudies for contributing to LOOPIS.app**
 
 ## 💡 Introduction
 
