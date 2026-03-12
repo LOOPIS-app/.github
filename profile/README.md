@@ -1,1 +1,1 @@
-💡 LOOPIS is a non-profit association established in 2023 in Bagarmossen, Stockholm, Sweden. [→ Resources](https://github.com/LOOPIS-app/.github/blob/main/README.md)
+💡 LOOPIS is a non-profit association established in 2023 in Bagarmossen, Stockholm, Sweden. We make the circulation of stuff in a neighbourhood as easy, fun, and cheap as possible. [→ Resources](https://github.com/LOOPIS-app/.github/blob/main/README.md)
