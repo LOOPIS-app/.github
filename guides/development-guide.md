@@ -89,6 +89,27 @@ Create a `.vscode/launch.json` file in your project with the following content:
 
 **Note**: Adjust the `pathMappings` to match your LocalWP site path and the specific plugin/theme you want to debug.
 
+### VS Code Settings for WordPress IntelliSense
+
+To enable code completion and navigation for WordPress functions, configure your `.vscode/settings.json`:
+
+```json
+{
+    "intelephense.environment.includePaths": [
+        "/Users/your-username/Local Sites/loopis/app/public"
+    ]
+}
+```
+
+**Note**: 
+- Adjust the path to match your LocalWP installation directory
+- Unlike `.vscode/launch.json`, the `intelephense` extension does **not** support environment variables like `${env:HOME}`, so you must use the absolute path
+
+This allows PHP Intelephense to recognize WordPress core functions, enabling:
+- Click-to-navigate to WordPress function definitions
+- Function signature tooltips and documentation
+- Improved autocomplete suggestions
+
 ## Getting Started
 
 After setting up your local environment:
