@@ -10,6 +10,7 @@ This guide is designed for developers who are new to PHP and WordPress. It provi
 - [Debugging Setup](#debugging-setup)
 - [loopis-config Deep Dive](#loopis-config-deep-dive)
 - [loopis-admin Deep Dive](#loopis-admin-deep-dive)
+- [loopis-theme Deep Dive](#loopis-theme-deep-dive)
 
 ## Prerequisites
 
@@ -264,3 +265,132 @@ Update wp_loopis_config status
 
 - `interface/` - Handles menu routing and admin interface setup
 - `pages/` - Contains the actual page content and functionality
+
+## loopis-theme Deep Dive
+
+**loopis-theme** is a WordPress theme. A WordPress instance can have multiple plugins installed and active, but can only have one theme installed and active.
+
+The **loopis-theme** module covers essentially all frontend user-facing functionality of LOOPIS. The following analysis is organized by page and feature.
+
+One important note: **loopis-theme** relies on WordPress core mechanisms as well as plugins like WP User Manager. When you encounter confusing code logic, consider looking at these aspects.
+
+### Folder Structure
+
+```
+loopis-theme/
+├── front-page.php              # Homepage template
+├── page.php                    # Generic page template
+├── page-*.php                  # Custom page templates (register, submit, etc.)
+├── header.php                  # Site header (navigation, meta tags)
+├── footer.php                  # Site footer (bottom navigation menu)
+├── functions.php               # Theme bootstrap and initialization
+├── search.php                  # Search results template
+├── single.php                  # Single post template
+├── templates/                  # Reusable template parts
+│   ├── user/front-page/       # Front page sections by user state
+│   │   ├── front-alerts.php   # Notifications for logged-in members
+│   │   ├── front-forum.php    # Forum posts display
+│   │   ├── front-message.php  # Welcome/status messages
+│   │   └── add-to-homescreen.php  # iOS PWA prompt
+│   ├── access/message.php      # Access restriction messages
+│   ├── faq/                   # FAQ-related templates
+│   └── post-list/             # Post listing templates
+├── pages/                      # Dynamic content loaders
+│   ├── submit/                # Submit page sub-pages
+│   └── discover/              # Discover page sub-pages
+├── includes/                   # Theme functionality
+│   ├── functions/everyone/    # Functions available to all users
+│   ├── functions/user/        # Functions for logged-in users
+│   └── features/              # Feature modules
+└── assets/                    # CSS, JS, fonts, images
+```
+
+### Database Connection for Development
+
+When analyzing the theme code, connecting to the WordPress MySQL database helps understand how data flows through the application.
+
+LocalWP provides a Site Shell feature that opens a pre-configured shell environment. Within the Site Shell, you can connect to the database using:
+
+```bash
+wp db cli
+```
+
+This method is more convenient for running quick SQL queries during development compared to LocalWP's web-based AdminNeo database manager.
+
+### WordPress Page Routing
+
+LOOPIS uses different routing mechanisms depending on the page type. Understanding this helps trace code execution.
+
+#### Standard Page Routing
+
+For most pages (e.g., `/register/`, `/submit/`), WordPress follows this sequence:
+
+```mermaid
+graph TD
+    A[URL: /register/] --> B[Parse PATH: register]
+    B --> C["SELECT id, post_name, post_content, post_status FROM wp_posts WHERE post_name = 'register' AND post_type = 'page' AND post_status = 'publish';"]
+    C --> D{Found?}
+    D -->|No| E[Return 404]
+    D -->|Yes| F[Template Hierarchy]
+    F --> G{page-register.php exists?}
+    G --> |Yes| H[Use page-register.php]
+    G --> |No| I{"page-{id}.php exists?"}
+    I --> |Yes| J["Use page-{id}.php"]
+    I --> |No| K{"page.php exists?"}
+    K --> |Yes| L["Use page.php"]
+    K --> |No| M["Use index.php"]
+```
+
+The above describes the routing rules for standard pages. However, WordPress also has special routing mechanisms for certain pages like the homepage and search pages, which are covered below when encountered.
+
+### Homepage
+1. The homepage URL when running locally with LocalWP is [http://loopis.local/](http://loopis.local/).
+2. The homepage routing is configured in WordPress [Dashboard](http://loopis.local/wp-admin/options-reading.php) under Settings: Reading → Your homepage displays → Homepage. The corresponding database query is:
+
+```sql
+select id, post_name, post_content, post_status from wp_posts where id = (select option_value from wp_options where option_name = 'page_on_front');
+```
+
+Don't worry if this step is confusing - you can skip it for now.
+
+3. The homepage template file is front-page.php. This file includes header.php and footer.php, so reading these three files gives you a complete understanding of the homepage functionality.
+
+### Registration Page
+1. The registration page URL when running locally with LocalWP is [http://loopis.local/register](http://loopis.local/register).
+2. The user system uses the WP User Manager plugin, which is affected by WordPress Multisite settings. By default, registration is disabled. To enable it, go to [Dashboard](http://loopis.local/wp-admin/network/settings.php): Network Admin → Settings → Registration Settings
+3. The registration page follows the standard page routing rules, so the corresponding template is `page-register.php`. The core line is:
+
+```php
+<?php echo do_shortcode('[wpum_register form_id="1"]'); ?>
+```
+
+This shortcode leverages the WP User Manager plugin to:
+
+- Display the registration form (GET request)
+- Process registration (POST request)
+- Show registration results (GET request)
+
+### Login Page
+1. The login page URL when running locally with LocalWP is [http://loopis.local/log-in](http://loopis.local/log-in).
+2. The login page follows the standard page routing rules, so the corresponding template is `page.php`. The core line is `<?php the_content(); ?>`. This function first queries the `post_content` from the database (equivalent SQL: `SELECT id, post_name, post_content, post_status FROM wp_posts WHERE post_name = 'log-in';`), then renders it using shortcode functionality (similar to the registration page) to leverage the WP User Manager plugin for:
+
+- Displaying the login form (GET request)
+- Processing login (POST request)
+- Showing login results (GET request)
+
+3. Upon successful login, the user is redirected to the default WP User Manager success page. The corresponding template is located at `wp-content/plugins/wp-user-manager/templates/already-logged-in.php`.
+
+### Search Page
+
+1. The search page URL when running locally with LocalWP is [http://loopis.local/?s=](http://loopis.local/?s=).
+2. The search functionality is a WordPress core feature, so the search page does not follow the standard page routing rules. The corresponding template is `search.php`.
+
+### Submit Page
+
+1. The submit page URL when running locally with LocalWP is [http://loopis.local/submit/](http://loopis.local/submit/).
+2. The submit page follows the standard page routing rules, so the corresponding template is `page-submit.php`.
+
+### FAQ Page
+
+1. The FAQ page URL when running locally with LocalWP is [http://loopis.local/faq/](http://loopis.local/faq/).
+2. The FAQ page follows the standard page routing rules, so the corresponding template is `page-faq.php`.
