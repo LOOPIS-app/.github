@@ -1,4 +1,5 @@
-# 🧑‍💻 Development guide for LOOPIS.app
+# 🧑‍💻 Development guide
+**How to get started.**
 
 This guide is designed for developers who are new to PHP and WordPress. It provides an overview of the LOOPIS project structure, essential WordPress concepts, and debugging setup to help you get started quickly.
 

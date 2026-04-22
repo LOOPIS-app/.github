@@ -1,6 +1,5 @@
 # 🌐 WordPress & PHP resources
-
-Here are som recommendations for finding information about WordPress and PHP.
+**Some recommendations for finding information about WordPress and PHP.**
 
 ## WordPress introduction
 - [Beginner WordPress Developer](https://learn.wordpress.org/course/beginner-wordpress-developer/) – Online course
