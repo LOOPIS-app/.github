@@ -4,7 +4,7 @@
 ## 💡 Introduction
 - [Introduction to LOOPIS](https://github.com/LOOPIS-app/.github/blob/main/resources/loopis-introduction.md)
 
-## 📋 resources
+## 📋 Resources
 - [Local setup of LOOPIS.app](https://github.com/LOOPIS-app/.github/blob/main/resources/local-setup.md)
 - [Development guide for LOOPIS.app](https://github.com/LOOPIS-app/.github/blob/main/resources/development-guide.md)
 - [Contribution guidelines](https://github.com/LOOPIS-app/.github/blob/main/resources/contribution-guidelines.md)
