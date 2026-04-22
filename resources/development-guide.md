@@ -15,7 +15,7 @@ This guide is designed for developers who are new to PHP and WordPress. It provi
 
 ## Prerequisites
 
-Follow the guide [Local setup of LOOPIS.app](https://github.com/LOOPIS-app/.github/blob/main/guides/local-setup.md) to install and run LOOPIS locally.
+Follow the guide [Local setup of LOOPIS.app](https://github.com/LOOPIS-app/.github/blob/main/resources/local-setup.md) to install and run LOOPIS locally.
 
 ## Repository Overview
 
