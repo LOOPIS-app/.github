@@ -6,7 +6,7 @@
 
 ## 📋 Resources
 - [Local setup of LOOPIS.app](https://github.com/LOOPIS-app/.github/blob/main/resources/local-setup.md)
-- [Development guide for LOOPIS.app](https://github.com/LOOPIS-app/.github/blob/main/resources/development-guide.md)
+- [Development guide](https://github.com/LOOPIS-app/.github/blob/main/resources/development-guide.md)
 - [Contribution guidelines](https://github.com/LOOPIS-app/.github/blob/main/resources/contribution-guidelines.md)
 
 ## 🌐 External resources
