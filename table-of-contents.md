@@ -1,4 +1,4 @@
-# 📚 Table of content
+# 📚 Table of contents
 **List of all resources available on our GitHub.**
 
 ## 💡 Introduction

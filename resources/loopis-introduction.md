@@ -11,10 +11,10 @@ We make the circulation of stuff in a neighbourhood as easy, fun, and cheap as p
 We use WordPress Multisite to run our web application, with separate sites for every locker in use. WordPress functionality is heavily customized by developing our own [components](https://github.com/orgs/LOOPIS-app/repositories) (plugins + theme). Programming languages used are PHP, HTML, CSS, and JavaScript.
 
 ## 📚 Resources
-→ [Table of content](https://github.com/LOOPIS-app/.github/blob/main/table-of-content.md).
+[→ Table of contents](https://github.com/LOOPIS-app/.github/blob/main/table-of-contents.md)
 
 ## 🧩 Contribution
-→ [Contribution guidelines](https://github.com/LOOPIS-app/.github/blob/main/resources/contribution-guidelines.md)
+[→ Contribution guidelines](https://github.com/LOOPIS-app/.github/blob/main/resources/contribution-guidelines.md)
 
 ## 👥 Team
 We aim to infuse a sense of community and collaboration in both the development and use of our concept. [Johan](https://github.com/joxyzan) and [Hubert](https://github.com/HubertHilborn) are currently employed by LOOPIS HQ to advance development and enable expansion to new areas. Together with our volunteer developers, we are The Develoopers. 💚
